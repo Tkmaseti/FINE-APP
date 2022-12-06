@@ -1,0 +1,61 @@
+.container {
+  position: relative;
+  width: 100%;
+  border-radius: 2%;
+  justify-content: center;
+  height: 100%;
+}
+input{
+  width: 200px;
+  height: 30px;
+  color: #FCBA21;
+  margin: 5px;
+  /* margin-left: 20px; */
+}
+
+#profile-img{
+  margin-bottom: 10px;
+  margin-top: 10px;
+  width: 200px;
+  height: 200px;
+  margin-left: 100px;
+}
+.btn{
+  background: #d49d1b;
+  width: 200px;
+  margin-top: 10px;
+  border: none;
+}
+label{
+  font-weight: bold;
+  font-size: larger;
+  margin-left: 10px;
+}
+.card {
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+}
+form {
+  background-color:  transparent;
+  margin-left: 100px;
+}
+.kin {
+  font-size: large;
+  margin-left: 10px;
+}
+.selector
+{
+  padding: 10px;
+}
+.form-check{
+  margin-top: 30px;
+}
+.form-check-label {
+  color: rgb(190, 197, 203);
+  font-size: small;
+}
+.select{
+  display: flex;
+}

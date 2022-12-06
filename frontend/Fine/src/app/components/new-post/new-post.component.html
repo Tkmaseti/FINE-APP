@@ -1,0 +1,16 @@
+<div class="container" *ngIf="currentUser;">
+  <h1>Hello {{currentUser.username}}</h1>
+  <div class="">
+    <p id="post">Add A Post</p>
+    <textarea class="input" cols="50" rows="10" placeholder="Type..." [(ngModel)]="form.text">Type...</textarea>
+  </div>
+  <button class="posts" (click)="add()">Post</button>
+
+  <div class="reaction">
+    <button class="btn">cancel</button>
+  </div>
+  <div class="footer">
+    <app-header></app-header>
+  </div>
+</div>
+

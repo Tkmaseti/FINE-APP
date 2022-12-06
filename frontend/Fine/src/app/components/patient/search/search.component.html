@@ -1,0 +1,30 @@
+<div class="container" *ngFor="let user of users">
+  <div class="dropdown">
+    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Find Practitioner
+    </button>
+    <button class=" btn search"><p><i class="fa-sharp fa-solid fa-magnifying-glass"></i></p></button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#"></a></li>
+      <li><a class="dropdown-item" href="#"></a></li>
+      <li><a class="dropdown-item" href="#"></a></li>
+    </ul>
+  </div>
+  <div class="row" id="columns" >
+    <div class="col">
+      <div class="card">
+        <div class="card-head">
+          <img src="{{user.image}}" class="img" alt="...">
+          <div>
+            <h5 class="username">{{user.username}}</h5>
+            <p class="profession">{{user.profession}}</p>
+          </div>
+        </div>
+        <a href="#" id="chat"class="btn btn-primary"><i class="fa-solid fa-message"></i>
+        </a>
+        <div class="card-body">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

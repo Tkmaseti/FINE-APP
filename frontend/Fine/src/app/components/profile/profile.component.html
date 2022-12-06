@@ -1,0 +1,63 @@
+<div class="container" *ngIf="currentUser; else loggedOut">
+  <header>
+    <h2>About {{currentUser.username}}</h2>
+  </header>
+  <div *ngIf="anItem">
+    <div class="img-container">
+      <img src="{{currentUser.userImage}}" alt="" class="profile-image">
+    </div>
+
+    <div class="user-info">
+      <div class="group-info">
+        <label for="">Email:</label>
+        <p>{{currentUser.userMail}}</p>
+      </div>
+      <div class="group-info">
+        <label for="">Phone:</label>
+        <p>{{currentUser.phone}}</p>
+      </div>
+      <div class="group-info">
+        <label for="">Profession:</label>
+        <p>{{currentUser.profession}}</p>
+      </div>
+      <div class="group-info">
+        <label for="">About:</label>
+        <p>{{currentUser.userAbout}}</p>
+      </div>
+    </div>
+    <button class="btn btn-primary " (click)="toogleTag()"><i class="fa-sharp fa-solid fa-pen"></i></button>
+
+  </div>
+
+
+  <div *ngIf="showMe && currentUser">
+    <div class="user-info">
+      <div class="profile">
+        <img src="{{currentUser.userImage}}" alt="profile-image" class="profile-pic">
+        <button class="profile-img-update"><i class="fa-sharp fa-solid fa-pen"></i></button>
+
+      </div>
+      <div class="grouped-info">
+        <input type="text" placeholder="{{currentUser.userMail}}">
+      </div>
+      <div class="grouped-info">
+        <input type="text"  [(ngModel)]="currentUser.phone" placeholder="{{currentUser.phone}}">
+      </div>
+      <div class="grouped-info">
+        <input type="text" [(ngModel)]="currentUser.profession" placeholder="{{currentUser.profession}}">
+      </div>
+      <div class="grouped-info">
+        <input type="text" placeholder="{{currentUser.userAbout}}">
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button id="btn" (click)="cancelFunc()">cancel</button>
+      <button id="btn" (click)="userUpdate()">update</button>
+    </div>
+  </div>
+</div>
+<ng-template #loggedOut>
+  Please login.
+</ng-template>
+
