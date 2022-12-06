@@ -1,7 +1,6 @@
-<div class="home">
-  <h1>Welcome To FINE</h1>
+<div>
 
-  <div class="row align-items-start" *ngFor="let post of posts">
+    <!-- <div class="row align-items-start" *ngFor="let post of posts">
     <div class="col" id="columns">
       <div class="card">
         <div class="card-head">
@@ -21,5 +20,21 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
+
+
+    <!-- logo -->
+    <div class="logo">
+        <img id="profile-img" src="assets\FINE.png" class="center" />
+    </div>
+
+
+    <!-- auth buttons -->
+    <div class="btns">
+        <button type="button" class="btn btn-in w-100 mb-5 text-uppercase btn-lg" [routerLink]="['/login']">Login</button>
+        <button type="button" class="btn btn-up w-100 mb-3 text-uppercase btn-lg" [routerLink]="['/register']">Register</button>
+    </div>
+
+
+
 </div>

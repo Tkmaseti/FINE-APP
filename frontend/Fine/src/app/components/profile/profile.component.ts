@@ -20,6 +20,8 @@ export class ProfileComponent implements OnInit {
   phone = 0
 
 
+  message = '';
+
   currentUser: any;
   constructor(
     private token: TokenStorageService,
@@ -40,16 +42,33 @@ export class ProfileComponent implements OnInit {
     this.anItem = true
   }
 
-  userUpdate(){
-    console.table(this.currentUser)
-    const phone = this.user
-    if(this.currentUser){
-      this.userService.updateUser(this.currentUser.id, this.currentUser)
-      .subscribe({
-        next: data => console.log(data),
-        error: err => console.error(err)
-      })
-    }
+  // userUpdate(){
+  //   console.table(this.currentUser)
+  //   const phone = this.user
+  //   if(this.currentUser){
+  //     this.userService.updateUser(this.currentUser.id, this.currentUser)
+  //     .subscribe({
+  //       next: data => console.log(data),
+  //       error: err => console.error(err)
+  //     })
+  //   }
 
+  // }
+
+
+
+  // new update
+  userUpdate(): void {
+    this.message = '';
+
+    this.userService.updateUser(this.currentUser.id, this.currentUser)
+      .subscribe({
+        next: (res) => {
+          console.log(res);
+          this.message = res.message ? res.message : 'This user was updated successfully!';
+        },
+        error: (e) => console.error(e)
+      });
   }
+
 }

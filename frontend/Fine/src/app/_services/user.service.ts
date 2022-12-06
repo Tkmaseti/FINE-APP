@@ -41,13 +41,28 @@ export class UserService {
   getAdminBoard(): Observable<any> {
     return this.http.get(API_URL + 'admin', { responseType: 'text' });
   }
-  updateUser(id: string, user: User): Observable<any> {
-    return this.http.put(this.user_url+`/${id}`, user, this.httpOptions )
-    .pipe(
-      tap(_ => this.log(`updated product id=${user.username}`)),
-      catchError(this.handleError<any>('updateProduct'))
-    );
+  // updateUser(id: string, user: User): Observable<any> {
+  //   return this.http.put(this.user_url+`/${id}`, user, this.httpOptions )
+  //   .pipe(
+  //     tap(_ => this.log(`updated product id=${user.username}`)),
+  //     catchError(this.handleError<any>('updateProduct'))
+  //   );
+  // }
+
+
+
+  // new update
+  updateUser(id: any, data: any): Observable<any> {
+    return this.http.put(`${this.user_url}/${id}`, data);
   }
+
+
+
+
+
+
+
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 

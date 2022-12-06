@@ -1,63 +1,101 @@
-.container {
-  position: relative;
-  width: 390px;
-  border-radius: 2%;
-  justify-content: center;
+.center {
+    display: block;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
-input{
-  width: 200px;
-  height: 50px;
-  color: #FCBA21;
-}
-input {
-  background-color: #3CBC8D;
-  color: white;
-}
-#name {
-  position: absolute;
-  width: 274px;
-  height: 50px;
-  left: 58px;
-  top: 367px;
-}
-#password {
-  position: absolute;
-  width: 274px;
-  height: 50px;
-  left: 58px;
-  top: 451px;
 
+a {
+    color: #024da2;
 }
-#profile-img{
-  position: absolute;
-  width: 200px;
-  height: 234.15px;
-  left: 95px;
-  top: 53px;
-}
-.btn{
-  background: #FCBA21;
-  margin-top: 10px;
-  position: absolute;
-  width: 274px;
-  height: 50px;
-  left: 58px;
-  top: 550px;
-  font-weight: bold;
-  font-size: larger;
-  color: white;
-}
-label{
-  font-weight: bold;
-  font-size: larger;
-  margin-left: 50px;
-}
-.card {
-  align-items: center;
-  justify-content: center;
-  background-color: transparent;
-  border: none;
-}
+
 form {
-  background-color:  transparent;
+    margin: 3rem;
 }
+
+input {
+    height: 3.5rem;
+    color: #FCBA21;
+}
+
+.btn-in {
+    background: #FCBA21;
+    height: 50px;
+    font-weight: bold;
+    font-size: larger;
+    color: white;
+}
+
+
+/* .container {
+    position: relative;
+    width: 390px;
+    border-radius: 2%;
+    justify-content: center;
+}
+
+input {
+    width: 200px;
+    height: 50px;
+    color: #FCBA21;
+}
+
+input {
+    background-color: #3CBC8D;
+    color: white;
+}
+
+#name {
+    position: absolute;
+    width: 274px;
+    height: 50px;
+    left: 58px;
+    top: 367px;
+}
+
+#password {
+    position: absolute;
+    width: 274px;
+    height: 50px;
+    left: 58px;
+    top: 451px;
+}
+
+#profile-img {
+    position: absolute;
+    width: 200px;
+    height: 234.15px;
+    left: 95px;
+    top: 53px;
+}
+
+.btn {
+    background: #FCBA21;
+    margin-top: 10px;
+    position: absolute;
+    width: 274px;
+    height: 50px;
+    left: 58px;
+    top: 550px;
+    font-weight: bold;
+    font-size: larger;
+    color: white;
+}
+
+label {
+    font-weight: bold;
+    font-size: larger;
+    margin-left: 50px;
+}
+
+.card {
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+}
+
+form {
+    background-color: transparent;
+} */
