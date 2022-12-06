@@ -25,22 +25,22 @@
     </div>
 
     <!-- login btn -->
-    <button type="button" class="btn btn-in w-100 mb-2 text-uppercase btn-lg" [routerLink]="['/login']">Login</button>
+    <button type="button" class="btn btn-in w-100 mb-2 text-uppercase btn-lg" (click)="onSubmit()">Login</button>
 
     <!-- register link -->
     <p>Don't have an account? <a [routerLink]="['/register']"> Register</a> </p>
 
 
 
-    <div class="form-group">
+    <!-- <div class="form-group">
         <div class="alert alert-danger" role="alert" *ngIf="f.submitted && isLoginFailed">
             Login failed: {{ errorMessage }}
         </div>
-    </div>
+    </div> -->
 </form>
 
 
-<div class="container">
+<!-- <div class="container">
     <div class="col">
         <div class="card">
 
@@ -51,4 +51,4 @@
     </div>
 
 
-</div>
+</div> -->

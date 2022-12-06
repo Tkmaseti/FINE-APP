@@ -15,7 +15,7 @@
 .main {
     position: relative;
     /* width: 390px; */
-    height: 96vh;
+    height: 100vh;
     background: linear-gradient(180deg, #4E80B9 0%, #f4bf41 100%);
     justify-content: center;
     overflow-y: hidden;

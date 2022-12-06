@@ -15,10 +15,9 @@ export class ProfileComponent implements OnInit {
   anItem: Boolean = false
 
   users: User[] = []
-  user?:User
+  user?:User | undefined
 
   phone = 0
-
 
   message = '';
 

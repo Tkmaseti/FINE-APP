@@ -16,6 +16,7 @@ const AUTH_TOKEN = window.sessionStorage.getItem('auth-token')
 export class UserService {
   private user_url = 'http://localhost:8050/api/practitioner';
   users: User[] = []
+  token: any
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -23,6 +24,11 @@ export class UserService {
 
     })
   };
+
+  // headers = new HttpHeaders({
+  //   'Content-Type': 'application/json',
+  //   'Authorization': 'Bearer' + this.token
+  // })
 
   constructor(
     private http: HttpClient,

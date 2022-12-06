@@ -1,14 +1,14 @@
 .container {
-  /* margin-top: 100px; */
-  height: 844px;
   position: relative;
   width: 390px;
+  height: 844px;
   /* justify-content: center; */
   background: gray;
 }
 
 h1 {
+  position: relative;
   font-size: xx-large;
   font-weight: bold;
-  margin-top: 400px;
+  top: 400px;
 }

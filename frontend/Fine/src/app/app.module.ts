@@ -14,6 +14,7 @@ import { LoginComponent } from './components/login/login.component';
 import { SearchComponent } from './components/patient/search/search.component';
 import { FormsModule, NgModel } from '@angular/forms';
 import { NewPostComponent } from './components/new-post/new-post.component';
+import { PostsComponent } from './components/posts/posts.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { NewPostComponent } from './components/new-post/new-post.component';
     ProfileComponent,
     LoginComponent,
     SearchComponent,
-    NewPostComponent
+    NewPostComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,

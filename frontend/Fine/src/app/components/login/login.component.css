@@ -6,10 +6,6 @@
     width: 50%;
 }
 
-a {
-    color: #024da2;
-}
-
 form {
     margin: 3rem;
 }
@@ -17,6 +13,7 @@ form {
 input {
     height: 3.5rem;
     color: #FCBA21;
+    font-size: 1.2rem;
 }
 
 .btn-in {
@@ -25,6 +22,15 @@ input {
     font-weight: bold;
     font-size: larger;
     color: white;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+a {
+    color: #024da2;
+    font-weight: 500;
 }
 
 
