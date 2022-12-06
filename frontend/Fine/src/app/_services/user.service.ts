@@ -16,7 +16,6 @@ const AUTH_TOKEN = window.sessionStorage.getItem('auth-token')
 export class UserService {
   private user_url = 'http://localhost:8050/api/practitioner';
   users: User[] = []
-  token: any
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -24,11 +23,6 @@ export class UserService {
 
     })
   };
-
-  // headers = new HttpHeaders({
-  //   'Content-Type': 'application/json',
-  //   'Authorization': 'Bearer' + this.token
-  // })
 
   constructor(
     private http: HttpClient,
@@ -47,33 +41,20 @@ export class UserService {
   getAdminBoard(): Observable<any> {
     return this.http.get(API_URL + 'admin', { responseType: 'text' });
   }
-
-  updateProduct(product: User): Observable<any> {
-    return this.http.put(this.user_url+`/${product.id}`, product, this.httpOptions).pipe(
-      tap(_ => this.log(`updated product id=${product.username}`)),
-      catchError(this.handleError<any>('updateProduct'))
-    );
+  update(id: string, user: User): Observable<any> {
+    return this.http.put( `${this.user_url}/${user.id}`, {user }, this.httpOptions);
   }
-
+  updateProduct(id:string | null, data: any):Observable<any>{
+    const url = `${this.user_url}/${id}`
+    return this.http.put<any>(url, data, this.httpOptions)
+  }
   updateUser(id: string, user: User): Observable<any> {
-    return this.http.put(this.user_url+`/${id}`, user)
+    return this.http.put(this.user_url+`/${id}`, user, this.httpOptions )
     .pipe(
       tap(_ => this.log(`updated product id=${user.username}`)),
       catchError(this.handleError<any>('updateProduct'))
     );
   }
-
-
-
-
-// updateUser(id:any, userData:any) : Observable<any>{
-//   return this.http.put(`${this.user_url}/${id}`, userData);
-// }
-
-
-
-
-
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 

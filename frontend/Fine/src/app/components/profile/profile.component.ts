@@ -15,11 +15,10 @@ export class ProfileComponent implements OnInit {
   anItem: Boolean = false
 
   users: User[] = []
-  user?:User | undefined
+  user?:User
 
   phone = 0
 
-  message = '';
 
   currentUser: any;
   constructor(
@@ -41,41 +40,16 @@ export class ProfileComponent implements OnInit {
     this.anItem = true
   }
 
-  productUpdate(){
+  userUpdate(){
+    console.table(this.currentUser)
+    const phone = this.user
     if(this.currentUser){
-      this.userService.updateProduct(this.user).subscribe(() => console.log(this.user))
+      this.userService.updateUser(this.currentUser.id, this.currentUser)
+      .subscribe({
+        next: data => console.log(data),
+        error: err => console.error(err)
+      })
     }
 
   }
-
-  // userUpdate(){
-  //   console.table(this.currentUser)
-  //   const phone = this.user
-  //   console.log(this.currentUser);
-
-  //   if(this.currentUser){
-  //     this.userService.updateUser(this.currentUser.id, this.currentUser)
-  //     .subscribe({
-  //       next: data => console.log(data),
-  //       // error: err => console.error(err)
-  //     })
-  //   }
-
-  // }
-
-
-  // userUpdate(): void {
-  //   this.message = '';
-  //   console.log(this.currentUser.id);
-
-
-  //   this.userService.updateUser(this.currentUser.id, this.currentUser)
-  //   .subscribe({
-  //       next: (res) => {
-  //         console.log(res);
-  //         this.message = res.message ? res.message : 'This user was updated successfully!';
-  //       },
-  //       error: (e) => console.error(e)
-  //     });
-  // }
 }

@@ -1,3 +1,4 @@
+import { User } from 'src/app/_interface/users';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -24,5 +25,8 @@ export class AuthService {
       username, email, password, profession, roles,
     },
       httpOptions);
+  }
+  update(id: string, user: User): Observable<any> {
+    return this.http.put(AUTH_API + 'signin', {id, user }, httpOptions);
   }
 }
