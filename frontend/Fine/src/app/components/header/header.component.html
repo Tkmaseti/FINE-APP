@@ -48,25 +48,41 @@
 
 <div class="footer">
     <div class="row">
+        <!-- posts -->
         <div class="col">
-            <a href="/home" class="nav-link" routerLink="home">
+            <a [routerLink]="['/posts']">
                 <i class="fa-regular fa-address-card"></i>
             </a>
         </div>
+
+        <!-- practitioners -->
         <div class="col">
-            <a href="/home" class="nav-link" routerLink="home">
+            <a [routerLink]="['/search']">
                 <i class="fa-solid fa-list-ul"></i>
             </a>
         </div>
+
+        <!-- profile -->
         <div class="col">
-            <a href="/home" class="nav-link" routerLink="home">
+            <a [routerLink]="['/profile']">
                 <i class="fa-regular fa-user"></i>
             </a>
         </div>
+
+        <!-- logout -->
         <div class="col">
-            <a href="/home" class="nav-link" routerLink="home">
+            <a (click)="logout()">
                 <i class="fa-solid fa-arrow-right-from-bracket"></i>
             </a>
         </div>
+
+
+        <!-- add  -->
+        <div *ngIf="prac">
+            <a class="float " [routerLink]="[ '/new'] ">
+                <i class="fa fa-plus my-float "></i>
+            </a>
+        </div>
+
     </div>
 </div>
