@@ -17,7 +17,7 @@ var dbConfig = require("./config/db.config");
 const nodemon = require("nodemon");
 
 db.mongoose
-  .connect(`mongodb://${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}`, {
+  .connect(dbConfig.url, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
