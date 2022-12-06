@@ -7,9 +7,11 @@
 }
 input{
   width: 200px;
-  height: 30px;
+  height: 40px;
   color: #FCBA21;
-  margin: 5px;
+  margin: 10px;
+  margin-left: 0px;
+  background-color: darkcyan;
   /* margin-left: 20px; */
 }
 
@@ -21,10 +23,11 @@ input{
   margin-left: 100px;
 }
 .btn{
-  background: #d49d1b;
+  background: darkcyan;
   width: 200px;
   margin-top: 10px;
   border: none;
+  border-radius: 10px;
 }
 label{
   font-weight: bold;
@@ -43,7 +46,9 @@ form {
 }
 .kin {
   font-size: large;
-  margin-left: 10px;
+  margin-left: 25px;
+  color: white;
+
 }
 .selector
 {
@@ -51,9 +56,11 @@ form {
 }
 .form-check{
   margin-top: 30px;
+  
 }
 .form-check-label {
-  color: rgb(190, 197, 203);
+  background-color: darkcyan;
+  color: white;
   font-size: small;
 }
 .select{

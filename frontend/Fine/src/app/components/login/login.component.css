@@ -5,26 +5,26 @@
   justify-content: center;
 }
 input{
-  width: 200px;
+  width: 250px;
   height: 50px;
   color: #FCBA21;
 }
 input {
-  background-color: #3CBC8D;
+  background-color: lightblue;
   color: white;
 }
 #name {
   position: absolute;
-  width: 274px;
+  width: 278px;
   height: 50px;
-  left: 58px;
+  left: 70px;
   top: 367px;
 }
 #password {
   position: absolute;
   width: 274px;
   height: 50px;
-  left: 58px;
+  left: 70px;
   top: 451px;
 
 }
@@ -36,7 +36,8 @@ input {
   top: 53px;
 }
 .btn{
-  background: #FCBA21;
+  background: darkcyan;
+  border-radius: 10px;
   margin-top: 10px;
   position: absolute;
   width: 274px;
