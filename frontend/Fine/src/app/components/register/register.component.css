@@ -1,63 +1,111 @@
-.container {
-  position: relative;
-  width: 100%;
-  border-radius: 2%;
-  justify-content: center;
-  height: 100%;
-}
-input{
-  width: 200px;
-  height: 40px;
-  color: #FCBA21;
-  margin: 10px;
-  margin-left: 0px;
-  background-color: darkcyan;
-  /* margin-left: 20px; */
+.nav-tabs {
+    border: none;
+    margin: 0 5rem;
+    font-size: 1.2rem;
 }
 
-#profile-img{
-  margin-bottom: 10px;
-  margin-top: 10px;
-  width: 200px;
-  height: 200px;
-  margin-left: 100px;
+.center {
+    display: block;
+    margin: 1rem auto;
 }
-.btn{
-  background: darkcyan;
-  width: 200px;
-  margin-top: 10px;
-  border: none;
-  border-radius: 10px;
-}
-label{
-  font-weight: bold;
-  font-size: larger;
-  margin-left: 10px;
-}
-.card {
-  align-items: center;
-  justify-content: center;
-  background-color: transparent;
-  border: none;
-}
+
 form {
-  background-color:  transparent;
-  margin-left: 100px;
+    margin: 2rem 1rem;
 }
+
+input {
+    height: 3rem;
+    color: #FCBA21;
+    font-size: 1.2rem;
+}
+
+.btn-up {
+    background: #12457d;
+    height: 50px;
+    font-weight: bold;
+    font-size: larger;
+    color: white;
+}
+
+.kin {
+    color: #213c51;
+}
+
+p {
+    font-size: 1.2rem;
+    color: white;
+    text-align: center;
+}
+
+a {
+    color: #024da2;
+    font-weight: 500;
+}
+
+
+/* .container {
+    position: relative;
+    width: 100%;
+    border-radius: 2%;
+    justify-content: center;
+    height: 100%;
+}
+
+input {
+    width: 200px;
+    height: 30px;
+    color: #FCBA21;
+    margin: 5px;
+}
+
+#profile-img {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 200px;
+    height: 200px;
+    margin-left: 100px;
+}
+
+.btn {
+    background: #d49d1b;
+    width: 200px;
+    margin-top: 10px;
+    border: none;
+}
+
+label {
+    font-weight: bold;
+    font-size: larger;
+    margin-left: 10px;
+}
+
+.card {
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+}
+
+form {
+    background-color: transparent;
+    margin-left: 100px;
+}
+
 .kin {
   font-size: large;
   margin-left: 25px;
   color: white;
 
 }
-.selector
-{
-  padding: 10px;
+
+.selector {
+    padding: 10px;
 }
 .form-check{
   margin-top: 30px;
   
 }
+
 .form-check-label {
   background-color: darkcyan;
   color: white;
@@ -66,3 +114,7 @@ form {
 .select{
   display: flex;
 }
+
+.select {
+    display: flex;
+} */

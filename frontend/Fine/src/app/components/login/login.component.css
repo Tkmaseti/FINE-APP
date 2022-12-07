@@ -1,18 +1,58 @@
-.container {
-  position: relative;
-  width: 390px;
-  border-radius: 2%;
-  justify-content: center;
+.center {
+    display: block;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
-input{
-  width: 250px;
-  height: 50px;
-  color: #FCBA21;
+
+form {
+    margin: 3rem;
 }
+
+input {
+    height: 3.5rem;
+    color: #FCBA21;
+    font-size: 1.2rem;
+}
+
+.btn-in {
+    background: #FCBA21;
+    height: 50px;
+    font-weight: bold;
+    font-size: larger;
+    color: white;
+}
+
+p {
+    font-size: 1.2rem;
+    color: white;
+    text-align: center;
+}
+
+a {
+    color: #024da2;
+    font-weight: 500;
+}
+
+
+/* .container {
+    position: relative;
+    width: 390px;
+    border-radius: 2%;
+    justify-content: center;
+}
+
 input {
   background-color: lightblue;
   color: white;
 }
+
+input {
+    background-color: #3CBC8D;
+    color: white;
+}
+
 #name {
   position: absolute;
   width: 278px;
@@ -20,6 +60,7 @@ input {
   left: 70px;
   top: 367px;
 }
+
 #password {
   position: absolute;
   width: 274px;
@@ -53,12 +94,33 @@ label{
   font-size: larger;
   margin-left: 50px;
 }
+
+.btn {
+    background: #FCBA21;
+    margin-top: 10px;
+    position: absolute;
+    width: 274px;
+    height: 50px;
+    left: 58px;
+    top: 550px;
+    font-weight: bold;
+    font-size: larger;
+    color: white;
+}
+
+label {
+    font-weight: bold;
+    font-size: larger;
+    margin-left: 50px;
+}
+
 .card {
-  align-items: center;
-  justify-content: center;
-  background-color: transparent;
-  border: none;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
 }
+
 form {
-  background-color:  transparent;
-}
+    background-color: transparent;
+} */
