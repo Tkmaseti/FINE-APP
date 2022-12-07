@@ -1,0 +1,15 @@
+version: '2'
+services:
+    server:
+        build: ./backend/
+        restart: always
+        ports:
+            - '8000:8000'
+    client:
+        build: ./frontend/Fine/
+        depends_on:
+            - server
+        links:
+            - 'server:server'
+        ports:
+            - '4002:4200'

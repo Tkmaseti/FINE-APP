@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { TokenStorageService } from 'src/app/_services/token-storage.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-posts',
@@ -25,7 +26,7 @@ export class PostsComponent implements OnInit {
   }
 
   getPost(){
-    this.httpClient.get<any>('http://localhost:8050/api/post/').subscribe(
+    this.httpClient.get<any>(environment.apiURL+'/api/post/').subscribe(
       response => {
         // console.log(response);
         this.posts = response;

@@ -2,7 +2,7 @@ import { Post } from './../../_interface/posts';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-home',
@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
   }
 
   getPost(){
-    this.httpClient.get<any>('http://localhost:8050/api/post/').subscribe(
+    this.httpClient.get<any>(environment.apiURL+'/api/post/').subscribe(
       response => {
         // console.log(response);
         this.posts = response;

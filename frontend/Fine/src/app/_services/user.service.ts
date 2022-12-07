@@ -5,9 +5,9 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { HttpHeaders } from '@angular/common/http';
 import { MessageService } from './message.service';
 import { User } from '../_interface/users';
+import { environment } from '../../environments/environment';
 
-
-const API_URL = 'http://localhost:8081/api/test/';
+const API_URL = environment.apiURL + '/api/test/';
 const AUTH_TOKEN = window.sessionStorage.getItem('auth-token')
 
 @Injectable({
