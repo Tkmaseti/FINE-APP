@@ -14,8 +14,8 @@ export class ProfileComponent implements OnInit {
   showMe: Boolean = true
   anItem: Boolean = false
 
-  users: User[] = []
-  user?:User
+  users: User[] = [];
+  user?:User;
 
   phone = 0
 
