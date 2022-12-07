@@ -26,7 +26,7 @@ export class SearchComponent implements OnInit {
 
 
   getUsers(){
-    this.httpClient.get<any>('http://localhost:8050/api/users/').subscribe(
+    this.httpClient.get<any>('http://156.38.173.36:8050/api/users/').subscribe(
       response => {
         // console.log(response);
         this.users = response;

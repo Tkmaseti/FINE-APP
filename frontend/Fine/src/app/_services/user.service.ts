@@ -14,7 +14,7 @@ const AUTH_TOKEN = window.sessionStorage.getItem('auth-token')
   providedIn: 'root'
 })
 export class UserService {
-  private user_url = 'http://localhost:8050/api/practitioner';
+  private user_url = 'http://156.38.173.36:8050/api/practitioner';
   users: User[] = []
 
   httpOptions = {

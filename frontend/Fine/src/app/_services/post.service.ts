@@ -7,7 +7,7 @@ import { MessageService } from './message.service';
 import { catchError, map, tap } from 'rxjs/operators';
 
 const AUTH_TOKEN = window.sessionStorage.getItem('auth-token')
-
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +17,7 @@ export class PostService {
   Post: Post[] = []
 
 
-  postUrl = 'http://localhost:8050/api/post/'
+  postUrl = environment.apiURL + '/api/post/'
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -34,7 +34,7 @@ export class PostService {
   ) {}
 
   getPosts(){
-    this.http.get<any>('http://localhost:8050/api/post/').subscribe(
+    this.http.get<any>('http://156.38.173.36:8050/api/post/').subscribe(
       response => {
         this.Post = response;
       }
