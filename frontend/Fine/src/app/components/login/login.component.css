@@ -44,9 +44,8 @@ a {
 }
 
 input {
-    width: 200px;
-    height: 50px;
-    color: #FCBA21;
+  background-color: lightblue;
+  color: white;
 }
 
 input {
@@ -55,27 +54,45 @@ input {
 }
 
 #name {
-    position: absolute;
-    width: 274px;
-    height: 50px;
-    left: 58px;
-    top: 367px;
+  position: absolute;
+  width: 278px;
+  height: 50px;
+  left: 70px;
+  top: 367px;
 }
 
 #password {
-    position: absolute;
-    width: 274px;
-    height: 50px;
-    left: 58px;
-    top: 451px;
-}
+  position: absolute;
+  width: 274px;
+  height: 50px;
+  left: 70px;
+  top: 451px;
 
-#profile-img {
-    position: absolute;
-    width: 200px;
-    height: 234.15px;
-    left: 95px;
-    top: 53px;
+}
+#profile-img{
+  position: absolute;
+  width: 200px;
+  height: 234.15px;
+  left: 95px;
+  top: 53px;
+}
+.btn{
+  background: darkcyan;
+  border-radius: 10px;
+  margin-top: 10px;
+  position: absolute;
+  width: 274px;
+  height: 50px;
+  left: 58px;
+  top: 550px;
+  font-weight: bold;
+  font-size: larger;
+  color: white;
+}
+label{
+  font-weight: bold;
+  font-size: larger;
+  margin-left: 50px;
 }
 
 .btn {

@@ -16,7 +16,7 @@ export class ProfileComponent implements OnInit {
   anItem: Boolean = false
 
   users: User[] = []
-  user?:User | undefined
+  user?:User;
 
   name : any;
   email : any;
@@ -71,13 +71,27 @@ profileForm = new FormGroup({
 
 
   // new update
-  userUpdate(): void {
-    this.message = '';
+  // userUpdate(): void {
+  //   this.message = '';
 
     
 
+  //   this.userService.updateUser(this.currentUser.id, this.currentUser)
+  //     .subscribe({
+  //       next: (res) => {
+  //         console.log(res);
+  //         this.message = res.message ? res.message : 'This user was updated successfully!';
+  //       },
+  //       error: (e) => console.error(e)
+  //     });
+  // }
+
+
+  userUpdate(): void {
+    this.message = '';
+    console.log(this.currentUser.id);
     this.userService.updateUser(this.currentUser.id, this.currentUser)
-      .subscribe({
+    .subscribe({
         next: (res) => {
           console.log(res);
           this.message = res.message ? res.message : 'This user was updated successfully!';
@@ -85,5 +99,4 @@ profileForm = new FormGroup({
         error: (e) => console.error(e)
       });
   }
-
 }

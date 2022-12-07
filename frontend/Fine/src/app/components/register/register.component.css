@@ -92,21 +92,27 @@ form {
 }
 
 .kin {
-    font-size: large;
-    margin-left: 10px;
+  font-size: large;
+  margin-left: 25px;
+  color: white;
+
 }
 
 .selector {
     padding: 10px;
 }
-
-.form-check {
-    margin-top: 30px;
+.form-check{
+  margin-top: 30px;
+  
 }
 
 .form-check-label {
-    color: rgb(190, 197, 203);
-    font-size: small;
+  background-color: darkcyan;
+  color: white;
+  font-size: small;
+}
+.select{
+  display: flex;
 }
 
 .select {
