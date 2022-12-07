@@ -15,8 +15,12 @@ export class RegisterComponent implements OnInit {
 
 
 
-  form: any = {
-    username: null, email: null, password: null, profession: null,
+  pracform: any = {
+    username: null, email: null, password: null, profession: null, license: null,
+  };
+
+  paform: any = {
+    username: null, email: null, password: null, nextOfKinNo: null, nextOFKInName: null,
   };
 
 
@@ -31,50 +35,53 @@ export class RegisterComponent implements OnInit {
 
 
   ngOnInit(): void {
-    console.log(this.practitioner)
+    // console.log(this.practitioner)
   }
 
-  tooglePractitioner (){
-    console.log(this.practitioner)
+  tooglePractitioner() {
+    // console.log(this.practitioner)
     this.practitioner = true
     this.patient = false
   }
 
-  toogleBack(){
+  toogleBack() {
     this.practitioner = false;
     this.patient = true;
     this.check = false
   }
   onSubmit(): void {
-    const { username, email, password, profession} = this.form;
-    if (this.practitioner = true){
-      const roles = "practitioner"
-      this.authService.register( username, email, password, profession, roles ).subscribe({
-        next: data => {
-          // console.log(data);
-          this.isSuccessful = true;
-          this.isSignUpFailed = false;
-          window.alert("Please Login to Verify Password")
-        },
-        error: err => {
-          this.errorMessage = err.error.message;
-          this.isSignUpFailed = true;
-        }
-      });
-    } else if (this.practitioner = false) {
-      const roles = ""
-      this.authService.register( username, email, password, profession, roles ).subscribe({
-        next: data => {
-          console.log(data);
-          this.isSuccessful = true;
-          this.isSignUpFailed = false;
-        },
-        error: err => {
-          this.errorMessage = err.error.message;
-          this.isSignUpFailed = true;
-        }
-      });
-
-    }
+    const { username, email, password, profession, license } = this.paform;
+    const roles = "practitioner"
+    this.authService.registerPrac(username, email, password, profession, license, roles,).subscribe({
+      next: data => {
+        // console.log(data);
+        this.isSuccessful = true;
+        this.isSignUpFailed = false;
+        window.alert("Please Login to Verify Password")
+      },
+      error: err => {
+        this.errorMessage = err.error.message;
+        this.isSignUpFailed = true;
+      }
+    });
   }
+  pa(): void {
+    const { username, email, password, nextOFKInName, nextOfKinNo } = this.pracform;
+
+    const roles = ""
+    this.authService.registerPa(username, email, password,nextOfKinNo, roles,nextOFKInName).subscribe({
+      next: data => {
+        console.log(data);
+        this.isSuccessful = true;
+        this.isSignUpFailed = false;
+      },
+      error: err => {
+        this.errorMessage = err.error.message;
+        this.isSignUpFailed = true;
+      }
+    });
+  }
+
+
 }
+
