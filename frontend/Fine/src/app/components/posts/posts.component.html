@@ -1,30 +1,54 @@
 <div class="container">
     <b class="name">Hello {{currentUser.username}}</b>
-    <div ngif="posts.length > 0">
-        <div class="row align-items-start" *ngFor="let post of posts">
-            <div class="col" id="columns">
-                <div class="card">
-                    <div class="card-head">
-                        <img src="{{post.userImage}}" class="img" alt="...">
-                        <div>
-                            <h4 class="username">{{post.userName}}</h4>
-                            <p class="profession">{{post.userProfession}}</p>
-                        </div>
-                    </div>
-                    <div>
-                    </div>
-                    <div>
-                        <img src="{{post.content.image}}" class="img2">
-                    </div>
-                    <div class="card-body">
-                        <p>{{post.content.text}}</p>
-                    </div>
+
+    <!-- <div class="post" *ngFor="let post of posts">
+        Poster details
+        <div class="row">
+            <img src="{{post.userImage}}" class="img" alt="...">
+            <div>
+                <h4 class="username">{{post.userName}}</h4>
+                <p class="profession">{{post.userProfession}}</p>
+            </div>
+        </div>
+
+
+    </div> -->
+
+
+    <div *ngIf="posts.length > 0">
+
+        <div class="card" *ngFor="let post of posts">
+            <!-- poster info -->
+            <div class="row">
+                <!-- profile pic -->
+                <div class="col">
+                    <img src="{{post.userImage}}" class="img" alt="...">
                 </div>
+
+                <!-- name -->
+                <div class="col">
+                    <h5 class="username">{{post.userName}}</h5>
+
+                </div>
+
+                <!-- chat button -->
+                <div class="col">
+                    <p class="profession">{{post.userProfession}}</p>
+
+                </div>
+            </div>
+
+            <!-- content -->
+            <div class="p-2">
+                <!-- <img src="{{post.userImage}}" class="img2"> -->
+
+                <p>{{post.content.text}}</p>
+
             </div>
         </div>
     </div>
 
-    <div ngif="posts.length <= 0">
+    <div *ngIf="posts.length <= 0">
         <p class="none">No Posts Yet</p>
     </div>
 </div>

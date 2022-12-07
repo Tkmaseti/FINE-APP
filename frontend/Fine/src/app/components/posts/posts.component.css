@@ -9,3 +9,29 @@
     font-size: 2rem;
     color: white;
 }
+
+.card {
+    margin: 2rem;
+    background: #FCBA21;
+    color: white;
+}
+
+.row {
+    margin: 1rem;
+}
+
+.img {
+    width: 50px;
+    border-radius: 40px;
+}
+
+.img2 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}
+
+p {
+    margin-top: 1rem
+}

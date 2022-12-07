@@ -2,6 +2,7 @@ import { User } from './../../../_interface/users';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { TokenStorageService } from 'src/app/_services/token-storage.service';
 
 @Component({
   selector: 'app-search',
@@ -11,14 +12,15 @@ import { ActivatedRoute } from '@angular/router';
 export class SearchComponent implements OnInit {
 
   users: User[] | undefined;
-
+  currentUser: any;
 
   constructor(
     private httpClient: HttpClient,
-    private route: ActivatedRoute,
+    private route: ActivatedRoute, private token: TokenStorageService,
   ) { }
 
   ngOnInit(): void {
+    this.currentUser = this.token.getUser();
     this.getUsers()
   }
 

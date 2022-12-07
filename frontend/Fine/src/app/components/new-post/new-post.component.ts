@@ -2,6 +2,7 @@ import { Post } from './../../_interface/posts';
 import { PostService } from './../../_services/post.service';
 import { Component, OnInit } from '@angular/core';
 import { TokenStorageService } from 'src/app/_services/token-storage.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -29,6 +30,7 @@ export class NewPostComponent implements OnInit {
   constructor(
     private postService: PostService,
     private token: TokenStorageService,
+    private router:Router
   ) { }
 
   ngOnInit(): void {
@@ -55,6 +57,7 @@ export class NewPostComponent implements OnInit {
       .subscribe(post => {
         // console.log(post)
         this.posts.push(post)
+        this.router.navigate(['/posts']);
       });
   }
 }
