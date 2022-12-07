@@ -4,7 +4,7 @@ import { TokenStorageService } from 'src/app/_services/token-storage.service';
 import { User } from 'src/app/_interface/users';
 import { UserService } from 'src/app/_services/user.service';
 import { ActivatedRoute } from '@angular/router';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-profile',
@@ -15,7 +15,7 @@ export class ProfileComponent implements OnInit {
   showMe: Boolean = true
   anItem: Boolean = false
 
-  users: User[] = []
+  users: User[] = [];
   user?:User;
 
   name : any;
@@ -24,11 +24,18 @@ export class ProfileComponent implements OnInit {
   bio :any;
 
 
-  message = '';
 
   currentUser: any;
 
-profileForm = new FormGroup({
+  profileForm = this.fb.group({
+    username: ['', Validators.required],
+    userMail:[''],
+    profession:[''],
+    userAbout:['']
+
+  });
+
+profile = new FormGroup({
   name: new FormControl(''),
   email: new FormControl(''),
   profession: new FormControl(''),
@@ -36,11 +43,16 @@ profileForm = new FormGroup({
 })
 
 
-  
-  
-  constructor(private token: TokenStorageService, private route: ActivatedRoute, private userService: UserService) { }
-  
-  
+
+
+  constructor(
+    private fb: FormBuilder,
+    private token: TokenStorageService,
+    private route: ActivatedRoute,
+    private userService: UserService
+    ) { }
+
+
   ngOnInit(): void {
     this.currentUser = this.token.getUser();
     // console.log(this.currentUser.userMail)
@@ -54,49 +66,30 @@ profileForm = new FormGroup({
     this.showMe = false
     this.anItem = true
   }
+  productUpdate(){
+    if(this.user){
+      var prof: any = this.profileForm.value
 
-  // userUpdate(){
-  //   console.table(this.currentUser)
-  //   const phone = this.user
-  //   if(this.currentUser){
-  //     this.userService.updateUser(this.currentUser.id, this.currentUser)
-  //     .subscribe({
-  //       next: data => console.log(data),
-  //       error: err => console.error(err)
-  //     })
-  //   }
-
-  // }
+      console.log(prof);
 
 
+      this.userService.updateProduct(prof).subscribe(() => console.log(prof))
+    }
+  }
 
-  // new update
-  // userUpdate(): void {
-  //   this.message = '';
+  userUpdate(){
 
-    
+    var prof: any = this.profileForm.value
+    console.log(prof)
+    console.table(this.currentUser)
+    const phone = this.user
+    if(this.currentUser){
+      this.userService.updateUser(this.currentUser.id, prof)
+      .subscribe({
+        next: data => console.log(data),
+        error: err => console.error(err)
+      })
+    }
 
-  //   this.userService.updateUser(this.currentUser.id, this.currentUser)
-  //     .subscribe({
-  //       next: (res) => {
-  //         console.log(res);
-  //         this.message = res.message ? res.message : 'This user was updated successfully!';
-  //       },
-  //       error: (e) => console.error(e)
-  //     });
-  // }
-
-
-  userUpdate(): void {
-    this.message = '';
-    console.log(this.currentUser.id);
-    this.userService.updateUser(this.currentUser.id, this.currentUser)
-    .subscribe({
-        next: (res) => {
-          console.log(res);
-          this.message = res.message ? res.message : 'This user was updated successfully!';
-        },
-        error: (e) => console.error(e)
-      });
   }
 }

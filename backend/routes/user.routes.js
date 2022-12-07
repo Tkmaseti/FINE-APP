@@ -13,7 +13,7 @@ module.exports = function (app) {
     app.get("/api/test/user", [authJwt.verifyToken], controller.userBoard);
     app.get("/api/test/mod", [authJwt.verifyToken, authJwt.isPractitioner], controller.practitionerBoard);
     app.get("/api/test/admin", [authJwt.verifyToken, authJwt.isAdmin], controller.adminBoard);
-    app.put("/api/practitioner/:id", controller.update);
+    app.put("/api/practitioner/:id", [authJwt.verifyToken], controller.update);
     app.put("/api/patient/:id", [authJwt.verifyToken], controller.update);
     app.get("/api/users", controller.findAll)
 

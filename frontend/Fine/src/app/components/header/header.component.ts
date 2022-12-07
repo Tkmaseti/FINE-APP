@@ -17,11 +17,11 @@ export class HeaderComponent implements OnInit {
   username?: string;
 
   prac = "ROLE_PRACTITIONER";
-  
-  
+
+
   constructor(private tokenStorageService: TokenStorageService, private router:Router) { }
-  
-  
+
+
   ngOnInit(): void {
     this.isLoggedIn = !!this.tokenStorageService.getToken();
 
@@ -34,8 +34,8 @@ export class HeaderComponent implements OnInit {
       this.username = user.userName;
     }
 
-    console.log(this.roles);
-    
+    // console.log(this.roles);
+
   }
   logout(): void {
     this.tokenStorageService.signOut();

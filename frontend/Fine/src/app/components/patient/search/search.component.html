@@ -1,29 +1,24 @@
 <div class="container">
-    <b class="name">Hello {{currentUser.username}}</b>
+  <b class="name">Hello {{currentUser.username}}</b>
 </div>
 <!-- *ngFor="let user of users" -->
 <!--   {{user.profession}} -->
 
 <div class="card" *ngFor="let user of users">
-    <div class="row">
-        <!-- profile pic -->
-        <div class="col">
-            <img src="{{user.image}}" class="img" alt="...">
-        </div>
-
-        <!-- name -->
-        <div class="col">
-            <h5 class="username">{{user.username}}</h5>
-            <p class="profession">{{user.profession}}</p>
-        </div>
-
-        <!-- chat button -->
-        <div class="col">
-            <a onClick='Ayoba.startConversation("b233111f1ff48aaf226abbe56566942b613ea74b@dev.ayoba.me")' href="#" id="chat" class="btn"><i class="fa-solid fa-message"></i>
-    </a>
-        </div>
+  <!-- profile pic -->
+  <div class="col">
+    <div class="card-head">
+      <img src="{{user.userImage}}" class="img" alt="...">
+      <div>
+        <h5 class="username">{{user.username}}</h5>
+        <p class="profession">{{user.profession}}</p>
+      </div>
     </div>
-
+    <a href="#" id="chat" class="btn btn-primary"><i class="fa-solid fa-message"></i>
+    </a>
+    <div class="card-body">
+    </div>
+  </div>
 </div>
 
 <script>
