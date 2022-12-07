@@ -126,3 +126,13 @@ input {
     background: none;
     border: none;
 }
+
+#btn {
+  color: aliceblue;
+  font-size: large;
+  background: #024DA1;
+  width: 150px;
+  border-radius: 2%;
+  margin: 10px;
+  height: 50px;
+}

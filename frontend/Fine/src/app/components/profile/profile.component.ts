@@ -4,7 +4,7 @@ import { TokenStorageService } from 'src/app/_services/token-storage.service';
 import { User } from 'src/app/_interface/users';
 import { UserService } from 'src/app/_services/user.service';
 import { ActivatedRoute } from '@angular/router';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-profile',
@@ -27,7 +27,15 @@ export class ProfileComponent implements OnInit {
 
   currentUser: any;
 
-profileForm = new FormGroup({
+  profileForm = this.fb.group({
+    username: ['', Validators.required],
+    userMail:[''],
+    profession:[''],
+    userAbout:['']
+
+  });
+
+profile = new FormGroup({
   name: new FormControl(''),
   email: new FormControl(''),
   profession: new FormControl(''),
@@ -37,7 +45,12 @@ profileForm = new FormGroup({
 
 
 
-  constructor(private token: TokenStorageService, private route: ActivatedRoute, private userService: UserService) { }
+  constructor(
+    private fb: FormBuilder,
+    private token: TokenStorageService,
+    private route: ActivatedRoute,
+    private userService: UserService
+    ) { }
 
 
   ngOnInit(): void {
@@ -53,12 +66,25 @@ profileForm = new FormGroup({
     this.showMe = false
     this.anItem = true
   }
+  productUpdate(){
+    if(this.user){
+      var prof: any = this.profileForm.value
+
+      console.log(prof);
+
+
+      this.userService.updateProduct(prof).subscribe(() => console.log(prof))
+    }
+  }
 
   userUpdate(){
+
+    var prof: any = this.profileForm.value
+    console.log(prof)
     console.table(this.currentUser)
     const phone = this.user
     if(this.currentUser){
-      this.userService.updateUser(this.currentUser.id, this.currentUser)
+      this.userService.updateUser(this.currentUser.id, prof)
       .subscribe({
         next: data => console.log(data),
         error: err => console.error(err)
