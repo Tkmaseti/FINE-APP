@@ -20,7 +20,7 @@
             <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid " #f="ngForm" novalidate>
                 <!-- name -->
                 <div class="form-group mb-2">
-                    <input type="text" class="form-control" name="username" [(ngModel)]="form.username" required minlength="3" maxlength="20" #username="ngModel" placeholder="Name" />
+                    <input type="text" class="form-control" name="username" [(ngModel)]="paform.username" required minlength="3" maxlength="20" #username="ngModel" placeholder="Name" />
                     <div class="alert-danger" *ngIf="username.errors && f.submitted">
                         <div *ngIf="username.errors['required']">Username is required</div>
                         <div *ngIf="username.errors['minlength']">
@@ -33,7 +33,7 @@
                 </div>
                 <!-- email address-->
                 <div class="form-group mb-2">
-                    <input type="email" class="form-control" name="email" [(ngModel)]="form.email" required email #email="ngModel" placeholder="email@example.com" />
+                    <input type="email" class="form-control" name="email" [(ngModel)]="paform.email" required email #email="ngModel" placeholder="email@example.com" />
                     <div class="alert-danger" *ngIf="email.errors && f.submitted">
                         <div *ngIf="email.errors['required']">Email is required</div>
                         <div *ngIf="email.errors['email']">
@@ -44,12 +44,12 @@
 
                 <!-- phone number -->
                 <div class="form-group mb-2">
-                    <input type="text" class="form-control" name="phonenumber" [(ngModel)]="form.phonenumber" required phonenumber placeholder="Phone(063)" />
+                    <input type="text" class="form-control" name="phonenumber" [(ngModel)]="paform.phonenumber" required phonenumber placeholder="Phone(063)" />
                 </div>
 
                 <!-- password -->
                 <div class="form-group mb-2">
-                    <input type="password" class="form-control" name="password" [(ngModel)]="form.password" requiredminlength="6" #password="ngModel" placeholder="Password" />
+                    <input type="password" class="form-control" name="password" [(ngModel)]="paform.password" requiredminlength="6" #password="ngModel" placeholder="Password" />
                     <div class="alert-danger" *ngIf="password.errors && f.submitted">
                         <div *ngIf="password.errors['required']">Password is required</div>
                         <div *ngIf="password.errors['minlength']">
@@ -64,16 +64,16 @@
                     <div class="kin">
                         <label for="phonenumber">Next Of Kin:</label>
                     </div>
-                    <input type="text" class="form-control" name="name" placeholder=" Name" [(ngModel)]="form.profession" required profession />
+                    <input type="text" class="form-control" name="name" placeholder=" Name" [(ngModel)]="paform.profession" required profession />
                 </div>
                 <!-- phone number -->
                 <div class="form-group mb-3">
-                    <input type="number" class="form-control" name="phone" placeholder="number" [(ngModel)]="form.phone" required phonenumber />
+                    <input type="number" class="form-control" name="phone" placeholder="number" [(ngModel)]="paform.phone" required phonenumber />
                 </div>
 
 
                 <!-- register btn -->
-                <button type="button" class="btn btn-up w-100 mb-2 text-uppercase btn-lg" (click)="onSubmit()">Register</button>
+                <button type="button" class="btn btn-up w-100 mb-2 text-uppercase btn-lg" (click)="pa()">Register</button>
 
                 <!-- login link -->
                 <p>Already have an account? <a [routerLink]="['/login']"> Login</a> </p>
@@ -91,7 +91,7 @@
             <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid " #f="ngForm" novalidate>
                 <!-- name -->
                 <div class="form-group mb-2">
-                    <input type="text" class="form-control" name="username" [(ngModel)]="form.username" required minlength="3" maxlength="20" #username="ngModel" placeholder="Name" />
+                    <input type="text" class="form-control" name="username" [(ngModel)]="pracform.username" required minlength="3" maxlength="20" #username="ngModel" placeholder="Name" />
                     <div class="alert-danger" *ngIf="username.errors && f.submitted">
                         <div *ngIf="username.errors['required']">Username is required</div>
                         <div *ngIf="username.errors['minlength']">
@@ -104,7 +104,7 @@
                 </div>
                 <!-- email address-->
                 <div class="form-group mb-2">
-                    <input type="email" class="form-control" name="email" [(ngModel)]="form.email" required email #email="ngModel" placeholder="email@example.com" />
+                    <input type="email" class="form-control" name="email" [(ngModel)]="pracform.email" required email #email="ngModel" placeholder="email@example.com" />
                     <div class="alert-danger" *ngIf="email.errors && f.submitted">
                         <div *ngIf="email.errors['required']">Email is required</div>
                         <div *ngIf="email.errors['email']">
@@ -115,12 +115,12 @@
 
                 <!-- phone number -->
                 <div class="form-group mb-2">
-                    <input type="text" class="form-control" name="phonenumber" [(ngModel)]="form.phonenumber" required phonenumber placeholder="Phone(063)" />
+                    <input type="text" class="form-control" name="phonenumber" [(ngModel)]="pracform.phonenumber" required phonenumber placeholder="Phone(063)" />
                 </div>
 
                 <!-- password -->
                 <div class="form-group mb-2">
-                    <input type="password" class="form-control" name="password" [(ngModel)]="form.password" requiredminlength="6" #password="ngModel" placeholder="Password" />
+                    <input type="password" class="form-control" name="password" [(ngModel)]="pracform.password" requiredminlength="6" #password="ngModel" placeholder="Password" />
                     <div class="alert-danger" *ngIf="password.errors && f.submitted">
                         <div *ngIf="password.errors['required']">Password is required</div>
                         <div *ngIf="password.errors['minlength']">
@@ -135,14 +135,14 @@
                 <!-- profession name -->
                 <div class="form-group mb-2">
                     <div class="kin">
-                        <label for="phonenumber">Proof of profession:</label>
+                        <label for="profession">Proof of profession:</label>
                     </div>
-                    <input type="text" class="form-control" name="name" placeholder=" Name" [(ngModel)]="form.profession" required profession />
+                    <input type="text" class="form-control" name="name" placeholder=" Name" [(ngModel)]="pracform.profession" required profession />
                 </div>
 
                 <!-- license number -->
                 <div class="form-group mb-2">
-                    <input type="number" class="form-control" name="license" [(ngModel)]="form.license" required license placeholder="License/No." />
+                    <input type="number" class="form-control" name="license" [(ngModel)]="pracform.license" required license placeholder="License/No." />
                 </div>
 
                 <!-- register btn -->

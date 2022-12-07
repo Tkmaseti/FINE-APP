@@ -69,10 +69,7 @@ profile = new FormGroup({
   productUpdate(){
     if(this.user){
       var prof: any = this.profileForm.value
-
       console.log(prof);
-
-
       this.userService.updateProduct(prof).subscribe(() => console.log(prof))
     }
   }
@@ -80,13 +77,12 @@ profile = new FormGroup({
   userUpdate(){
 
     var prof: any = this.profileForm.value
-    console.log(prof)
-    console.table(this.currentUser)
-    const phone = this.user
+    // console.log(prof)
+    // console.log(this.currentUser)
     if(this.currentUser){
       this.userService.updateUser(this.currentUser.id, prof)
       .subscribe({
-        next: data => console.log(data),
+        next: () => console.log(prof),
         error: err => console.error(err)
       })
     }
