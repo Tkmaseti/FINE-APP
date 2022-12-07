@@ -4,6 +4,7 @@ import { TokenStorageService } from 'src/app/_services/token-storage.service';
 import { User } from 'src/app/_interface/users';
 import { UserService } from 'src/app/_services/user.service';
 import { ActivatedRoute } from '@angular/router';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-profile',
@@ -17,16 +18,29 @@ export class ProfileComponent implements OnInit {
   users: User[] = []
   user?:User | undefined
 
-  phone = 0
+  name : any;
+  email : any;
+  profession : any;
+  bio :any;
+
 
   message = '';
 
   currentUser: any;
-  constructor(
-    private token: TokenStorageService,
-    private route: ActivatedRoute,
-    private userService: UserService
-    ) { }
+
+profileForm = new FormGroup({
+  name: new FormControl(''),
+  email: new FormControl(''),
+  profession: new FormControl(''),
+  bio: new FormControl('')
+})
+
+
+  
+  
+  constructor(private token: TokenStorageService, private route: ActivatedRoute, private userService: UserService) { }
+  
+  
   ngOnInit(): void {
     this.currentUser = this.token.getUser();
     // console.log(this.currentUser.userMail)
@@ -59,6 +73,8 @@ export class ProfileComponent implements OnInit {
   // new update
   userUpdate(): void {
     this.message = '';
+
+    
 
     this.userService.updateUser(this.currentUser.id, this.currentUser)
       .subscribe({

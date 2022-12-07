@@ -12,7 +12,7 @@ import { ChatsComponent } from './components/chats/chats.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { LoginComponent } from './components/login/login.component';
 import { SearchComponent } from './components/patient/search/search.component';
-import { FormsModule, NgModel } from '@angular/forms';
+import { FormsModule, NgModel, ReactiveFormsModule } from '@angular/forms';
 import { NewPostComponent } from './components/new-post/new-post.component';
 import { PostsComponent } from './components/posts/posts.component';
 
@@ -35,6 +35,7 @@ import { PostsComponent } from './components/posts/posts.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
