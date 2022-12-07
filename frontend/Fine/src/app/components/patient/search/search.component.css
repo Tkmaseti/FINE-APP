@@ -1,110 +1,84 @@
-.container {
-  margin-top: 100px;
-  position: relative;
-  width: 390px;
-  border-radius: 2%;
-  justify-content: center;
+.name {
+    font-size: 2.5rem;
+    color: #FCBA21;
+    margin: 0 3.5rem;
 }
 
-.dropdown {
-  position: absolute;
-  width: 280px;
-  height: 50px;
-  background:#FCBA21 ;
-  margin-left: 10px;
-}
 
-.btn {
-  background: #FCBA21;
-  color: #000000;
-  font-weight: bold;
-  font-size: larger;
-  width: 280px;
-  height: 50px;
-
-}
-
-.search {
-  box-sizing: border-box;
-  position: absolute;
-  width: 48px;
-  height: 50px;
-  border: 3px solid #FCBA21;
-  background: #FCBA21;
-}
-
-.dropdown-menu {
-  background: #fcba219f;
-}
+/* .container {
+    position: relative;
+    width: 390px;
+    border-radius: 2%;
+} */
 
 .card {
-  margin: 10px;
-  display: block;
-  position: relative;
-  width: 340px;
-  height: 80px;
-  margin-left: 10px;
-  background: #FCBA21;
-
+    height: 80px;
+    margin: 2rem;
+    background: #FCBA21;
+    color: white;
 }
 
 .img {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  left: 30px;
-  top: 10px;
-  border-radius: 40px;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 30px;
+    top: 10px;
+    border-radius: 40px;
 }
 
 .username {
-  position: absolute;
-  width: 96px;
-  height: 29px;
-  left: 128px;
-  top: 10px;
-
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 29px;
-  color: #000000;
-
+    position: absolute;
+    width: 96px;
+    height: 29px;
+    left: 128px;
+    top: 10px;
+    /* font-family: 'Inter'; */
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    color: #12457d;
 }
 
 .profession {
-  position: absolute;
-  width: 100px;
-  height: 18px;
-  left: 138px;
-  top: 40px;
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 18px;
-  color: #FFFFFF;
+    position: absolute;
+    width: 100px;
+    height: 18px;
+    left: 138px;
+    top: 40px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #FFFFFF;
 }
 
-.text {
-  margin: 10px;
-  font-weight: 500;
-  height: 100px;
-  overflow: hidden;
+
+/* .text {
+    margin: 10px;
+    font-weight: 500;
+    height: 100px;
+    overflow: hidden;
 }
 
 .col {
-  margin-top: 80px;
-  background: transparent;
-}
+    margin-top: 80px;
+    background: transparent;
+} */
 
 #chat {
-  position: absolute;
-  left: 81.08%;
-  right: 12.1%;
-  top: 31.56%;
-  bottom: 64.3%;
-  width: 40px;
-  height: 28.58;
+    position: absolute;
+    left: 81.08%;
+    right: 12.1%;
+    top: 31.56%;
+    bottom: 64.3%;
+    width: 40px;
+    height: 28.58;
+}
+
+svg {
+    height: 1.5rem;
+    color: white;
 }
