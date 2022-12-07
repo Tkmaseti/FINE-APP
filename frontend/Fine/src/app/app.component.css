@@ -18,6 +18,6 @@
     height: 100vh;
     background: linear-gradient(180deg, #4E80B9 0%, #f4bf41 100%);
     justify-content: center;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
     overflow-x: hidden;
 }

@@ -126,6 +126,9 @@ input {
     background: none;
     border: none;
 }
+input::placeholder{
+  color: white;
+}
 
 #btn {
   color: aliceblue;

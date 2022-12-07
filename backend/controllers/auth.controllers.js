@@ -89,7 +89,7 @@ exports.signin = (req, res) => {
                 phone: user.phone,
                 about: user.about,
                 email: user.email,
-                profession: user.profession
+                profession: user.profession,
             }, config.secret, {
                 expiresIn: 86400 // 24 hours
             });
